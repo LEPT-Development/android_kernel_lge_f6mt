@@ -76,6 +76,7 @@
 #include <linux/bitops.h>
 #include <linux/capability.h>
 #include <linux/cpu.h>
+#include <linux/dynamic_debug.h>
 #include <linux/types.h>
 #include <linux/kernel.h>
 #include <linux/hash.h>
