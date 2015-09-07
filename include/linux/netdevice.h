@@ -2777,7 +2777,7 @@ do {								\
 #define netif_dbg(priv, type, netdev, format, args...)		\
 do {								\
 	if (netif_msg_##type(priv))				\
-		netdev_dbg(netdev, format, ##args);	        \
+		dynamic_netdev_dbg(netdev, format, ##args);	        \
 } while (0)
 #else
 #define netif_dbg(priv, type, dev, format, args...)			\
