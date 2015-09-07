@@ -76,7 +76,6 @@
 #include <linux/bitops.h>
 #include <linux/capability.h>
 #include <linux/cpu.h>
-#include <linux/dynamic_debug.h>
 #include <linux/types.h>
 #include <linux/kernel.h>
 #include <linux/hash.h>
@@ -91,7 +90,6 @@
 #include <linux/interrupt.h>
 #include <linux/if_ether.h>
 #include <linux/netdevice.h>
-#include <linux/netdev_features.h>
 #include <linux/etherdevice.h>
 #include <linux/ethtool.h>
 #include <linux/notifier.h>
@@ -6574,4 +6572,3 @@ static int __init initialize_hashrnd(void)
 }
 
 late_initcall_sync(initialize_hashrnd);
-
