@@ -175,23 +175,6 @@
 #define PTYPE_HASH_SIZE	(16)
 #define PTYPE_HASH_MASK	(PTYPE_HASH_SIZE - 1)
 
-#if defined(CONFIG_DYNAMIC_DEBUG)
-#define netdev_dbg(__dev, format, args...)			\
-do {								\
-	dynamic_netdev_dbg(__dev, format, ##args);		\
-} while (0)
-#elif defined(DEBUG)
-#define netdev_dbg(__dev, format, args...)			\
-	netdev_printk(KERN_DEBUG, __dev, format, ##args)
-#else
-#define netdev_dbg(__dev, format, args...)			\
-({								\
-	if (0)							\
-		netdev_printk(KERN_DEBUG, __dev, format, ##args); \
-	0;							\
-})
-#endif
-
 static DEFINE_SPINLOCK(ptype_lock);
 static struct list_head ptype_base[PTYPE_HASH_SIZE] __read_mostly;
 static struct list_head ptype_all __read_mostly;	/* Taps */
